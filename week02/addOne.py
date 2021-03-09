@@ -1,6 +1,6 @@
-# helloWorld.py
+# addOne.py
 # This program reading on a number and prints out one more than that number
-# Autgor: Fatima Zeino
+# Author: Fatima Zeino
 
 number= int(input('Enter Number: '))
 plusonenum = number + 1
