@@ -2,12 +2,16 @@
 # This program allows a user to create new students and to view students
 # Author: Fatima Zeino
 
+import json
+filename = "studentData.json"
+
 def displayMenu():
     print("What would you like to do?")
     print("\t(a) Add new student")
     print("\t(v) View students")
+    print("\t(s) Save students")
     print("\t(q) Quit")
-    choice = input("Type one letter (a/v/q) :").strip()
+    choice = input("Type one letter (a/v/s/q) :").strip()
     return choice
 
 def readModules():
@@ -41,10 +45,20 @@ def doView(students):
 def doNothing(dumby):
  pass
 
+def savedict(obj):
+   with open(filename, 'wt') as f:
+        json.dump(obj,f)
+
+def doSave(students):
+ #call to save dict here
+ savedict(students)
+ print("students saved")
+
 #the dict that maps a letter to function
 choiceMap = {
  'a': doAdd,
  'v': doView,
+ 's': doSave,
  'q': doNothing # q is a valid choice
 }
 #main program
