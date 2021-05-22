@@ -54,6 +54,14 @@ def doSave(students):
  savedict(students)
  print("students saved")
 
+def readDict():
+    with open(filename) as f:
+        return json.load(f)
+
+def doLoad():
+  return readDict()
+
+
 #the dict that maps a letter to function
 choiceMap = {
  'a': doAdd,
@@ -62,7 +70,7 @@ choiceMap = {
  'q': doNothing # q is a valid choice
 }
 #main program
-students = []
+students = doLoad()
 choice = displayMenu()
 while(choice != 'q'):
  if choice in choiceMap:
