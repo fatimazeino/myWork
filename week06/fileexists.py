@@ -2,7 +2,6 @@
 # This program that checks if the file exists
 # Author: Fatima Zeino
 
-
 import os.path
 
 filename = "count.txt"
